@@ -1,59 +1,49 @@
-# AngularApp
+# Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.3.
+Учебный проект на Angular — менеджер задач, который поможет организовать повседневные дела и следить за их выполнением.
 
-## Development server
+## Идея и планируемые возможности
 
-To start a local development server, run:
+Основная сущность приложения — задача. Для каждой задачи планируется поддержать:
 
-```bash
-ng serve
-```
+- название и описание;
+- статус: новая, в работе или выполнена;
+- приоритет;
+- срок выполнения.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Также в планах:
 
-## Code scaffolding
+- создание, редактирование и удаление задач;
+- поиск задач по названию;
+- фильтрация по статусу, приоритету и сроку;
+- отдельный список задач на сегодня;
+- сохранение задач между посещениями приложения.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Технологии
 
-```bash
-ng generate component component-name
-```
+- Angular 22
+- TypeScript
+- SCSS
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Запуск проекта
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Установите зависимости и запустите сервер разработки:
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Откройте `http://localhost:4200/`. При изменении файлов приложение перезагрузится автоматически.
 
-For end-to-end (e2e) testing, run:
+Сборка проекта:
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Запуск тестов:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
