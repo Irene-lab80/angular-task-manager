@@ -6,8 +6,8 @@
       <p class="eyebrow"><span class="eyebrow-dot"></span> A calmer way to get things done</p>
       <h1 id="hero-title">Make room for <span>what matters.</span></h1>
       <p class="hero-description">
-        A little more focus, a little less overwhelm. Bring your tasks together
-        and make progress at your own pace.
+        A little more focus, a little less overwhelm. Bring your tasks together and make progress at
+        your own pace.
       </p>
       <a class="primary-link" href="#features">
         Explore the features
@@ -41,59 +41,9 @@
     </div>
 
     <div class="feature-grid">
-      <article class="feature-card">
-        <div class="feature-art planner-art" aria-hidden="true">
-          <svg viewBox="0 0 180 140" role="img">
-            <rect x="38" y="24" width="104" height="94" rx="14" fill="var(--color-surface)" />
-            <path d="M38 43h104" stroke="#e5e1d5" stroke-width="2" />
-            <path d="M63 18v13M117 18v13" stroke="var(--color-sage)" stroke-width="5" stroke-linecap="round" />
-            <circle cx="61" cy="63" r="5" fill="var(--color-accent)" />
-            <circle cx="61" cy="83" r="5" fill="#d8e0d2" />
-            <circle cx="61" cy="103" r="5" fill="#d8e0d2" />
-            <path d="M76 63h42M76 83h34M76 103h39" stroke="#b9b7aa" stroke-width="4" stroke-linecap="round" />
-            <path d="m55 83 4 4 8-9" fill="none" stroke="var(--color-sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <p class="card-label">01 / PLAN</p>
-        <h3>Plan your day</h3>
-        <p>Gather your to-dos in one place and give your day a simple, flexible shape.</p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-art focus-art" aria-hidden="true">
-          <svg viewBox="0 0 180 140" role="img">
-            <circle cx="90" cy="70" r="43" fill="#f9f5eb" />
-            <circle cx="90" cy="70" r="31" fill="none" stroke="#d9dfd2" stroke-width="2" />
-            <circle cx="90" cy="70" r="18" fill="none" stroke="#d9dfd2" stroke-width="2" />
-            <path d="m90 42 8 25-8 8-8-8 8-25Z" fill="var(--color-accent)" />
-            <path d="m90 75 12 21-12-6-12 6 12-21Z" fill="var(--color-sage)" />
-            <circle cx="90" cy="70" r="4" fill="var(--color-surface)" />
-            <path d="M41 47h12M127 96h12" stroke="var(--color-accent)" stroke-width="4" stroke-linecap="round" />
-            <circle cx="127" cy="43" r="4" fill="var(--color-sage)" />
-          </svg>
-        </div>
-        <p class="card-label">02 / FOCUS</p>
-        <h3>Keep priorities close</h3>
-        <p>See what matters most right now, without letting the rest of your list get lost.</p>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-art progress-art" aria-hidden="true">
-          <svg viewBox="0 0 180 140" role="img">
-            <rect x="37" y="34" width="106" height="72" rx="16" fill="var(--color-surface)" />
-            <circle cx="65" cy="70" r="14" fill="none" stroke="#e4e2d8" stroke-width="6" />
-            <path d="M65 56a14 14 0 1 1-12 21" fill="none" stroke="var(--color-sage)" stroke-width="6" stroke-linecap="round" />
-            <path d="M89 59h34M89 70h27" stroke="#a6aa99" stroke-width="4" stroke-linecap="round" />
-            <rect x="55" y="91" width="70" height="5" rx="2.5" fill="#e9e7de" />
-            <rect x="55" y="91" width="46" height="5" rx="2.5" fill="var(--color-accent)" />
-            <path d="m119 41 4 4 8-9" fill="none" stroke="var(--color-sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="m143 28 3 6 6 2-6 3-3 6-2-6-6-3 6-2 2-6Z" fill="var(--color-accent)" />
-          </svg>
-        </div>
-        <p class="card-label">03 / PROGRESS</p>
-        <h3>Celebrate each step</h3>
-        <p>Notice the little wins along the way and build momentum one completed task at a time.</p>
-      </article>
+      <app-planner-card />
+      <app-focus-card />
+      <app-progress-card />
     </div>
   </section>
 </main>
