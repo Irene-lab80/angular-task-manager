@@ -1,51 +1,43 @@
 <app-header></app-header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="eyebrow-dot"></span> A calmer way to get things done</p>
-      <h1 id="hero-title">Make room for <span>what matters.</span></h1>
-      <p class="hero-description">
-        A little more focus, a little less overwhelm. Bring your tasks together and make progress at
-        your own pace.
-      </p>
-      <a class="primary-link" href="#features">
-        Explore the features
-        <span aria-hidden="true">→</span>
-      </a>
-      <p class="hero-note">Small steps count. Start with just one.</p>
-    </div>
-
-    <div class="hero-art" aria-hidden="true">
-      <div class="art-orbit orbit-one"></div>
-      <div class="art-orbit orbit-two"></div>
-      <div class="art-note note-main">
-        <span class="note-check">✓</span>
-        <span class="note-lines"><i></i><i></i></span>
-        <span class="note-sparkle">✦</span>
-      </div>
-      <div class="art-note note-small">
-        <span class="small-dot"></span>
-        <span class="note-lines"><i></i><i></i></span>
-      </div>
-      <span class="art-sparkle sparkle-one">✳</span>
-      <span class="art-sparkle sparkle-two">✦</span>
-    </div>
-  </section>
-
-  <section id="features" class="features" aria-labelledby="features-title">
-    <div class="section-heading">
-      <p class="eyebrow">A thoughtful toolkit</p>
-      <h2 id="features-title">Your day, with a little more clarity.</h2>
-      <p>Everything you need to turn a busy list into steady progress.</p>
-    </div>
-
-    <div class="feature-grid">
-      <app-planner-card />
-      <app-focus-card />
-      <app-progress-card />
-    </div>
-  </section>
+  <nav class="nav">
+    <button
+      class="nav-button"
+      [class.active]="currentPage === 'home'"
+      [disabled]="currentPage === 'home'"
+      (click)="currentPage = 'home'"
+    >
+      Главная
+    </button>
+    <button
+      class="nav-button"
+      [class.active]="currentPage === 'tasks'"
+      [disabled]="currentPage === 'tasks'"
+      (click)="currentPage = 'tasks'"
+    >
+      Задачи
+    </button>
+    <button
+      class="nav-button"
+      [class.active]="currentPage === 'create'"
+      [disabled]="currentPage === 'create'"
+      (click)="currentPage = 'create'"
+    >
+      Создать
+    </button>
+  </nav>
+  @switch (currentPage) {
+    @case ('home') {
+      <app-home />
+    }
+    @case ('tasks') {
+      <app-tasks />
+    }
+    @case ('create') {
+      <app-create />
+    }
+  }
 </main>
 
 <app-footer></app-footer>

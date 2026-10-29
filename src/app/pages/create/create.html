@@ -1,0 +1,56 @@
+<section class="create-page">
+  <header class="create-heading">
+    <p class="eyebrow">Новый шаг</p>
+    <h1>Создать задачу</h1>
+    <p class="create-description">Запишите, что нужно сделать, и добавьте детали.</p>
+  </header>
+
+  <form class="task-form" (ngSubmit)="addTask()">
+    <label class="field">
+      <span class="field-label">Название задачи</span>
+      <input
+        class="text-input"
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        placeholder="Например, подготовить план на неделю"
+        maxlength="120"
+        required
+      />
+      <span class="field-hint">До 120 символов</span>
+    </label>
+
+    <label class="field">
+      <span class="field-label">Описание <span class="optional-label">необязательно</span></span>
+      <textarea
+        class="text-input description-input"
+        name="description"
+        [(ngModel)]="description"
+        placeholder="Добавьте подробности или заметки"
+        maxlength="500"
+        rows="3"
+      ></textarea>
+    </label>
+
+    <div class="form-actions">
+      <button class="create-button" type="submit" [disabled]="!title.trim()">
+        Добавить задачу
+      </button>
+      <span class="form-note">Созданные здесь задачи останутся на этой странице.</span>
+    </div>
+  </form>
+
+  <section class="created-tasks">
+    <h2>Добавленные задачи</h2>
+    @for (task of createdTasks; track task.id) {
+      <article class="created-task">
+        <h3>{{ task.title }}</h3>
+        @if (task.description) {
+          <p>{{ task.description }}</p>
+        }
+      </article>
+    } @empty {
+      <p class="created-empty">Здесь появятся задачи, созданные в этой форме.</p>
+    }
+  </section>
+</section>
