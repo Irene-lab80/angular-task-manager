@@ -1,0 +1,55 @@
+<section class="tasks-page">
+  @let total = tasks.length;
+  <header class="tasks-heading">
+    <div>
+      <p class="eyebrow">Ваш рабочий ритм</p>
+      <h1>Задачи</h1>
+      <p class="tasks-description">Небольшие шаги складываются в большой результат.</p>
+    </div>
+    <div class="tasks-summary">
+      <span class="summary-count">{{ completedCount }} из {{ total }}</span>
+      <span class="summary-label">выполнено</span>
+    </div>
+  </header>
+
+  @if (completedCount > 0) {
+    <p class="list-note">Отличная работа — уже есть выполненные задачи.</p>
+  } @else {
+    <p class="list-note">Отметьте задачу чекбоксом, когда выполните её.</p>
+  }
+
+  <div class="task-list">
+    @for (task of tasks; track task.id) {
+      <article class="task-item" [class.task-item--completed]="task.status === 'completed'">
+        <label class="task-main">
+          <input
+            class="task-checkbox"
+            type="checkbox"
+            [checked]="task.status === 'completed'"
+            (change)="toggleTask(task)"
+          />
+          <span class="task-copy">
+            <span class="task-title">{{ task.title }}</span>
+            @if (task.description) {
+              <span class="task-description">{{ task.description }}</span>
+            }
+          </span>
+        </label>
+
+        @switch (task.status) {
+          @case ('planned') {
+            <span class="status status--planned">К выполнению</span>
+          }
+          @case ('in-progress') {
+            <span class="status status--in-progress">В работе</span>
+          }
+          @case ('completed') {
+            <span class="status status--completed">Выполнено</span>
+          }
+        }
+      </article>
+    } @empty {
+      <p class="empty-state">Задач пока нет. Создайте первую!</p>
+    }
+  </div>
+</section>

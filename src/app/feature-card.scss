@@ -1,14 +1,14 @@
 .feature-card {
-  border: 1px solid #e5e5dc;
+  border: 1px solid var(--color-border-card);
   border-radius: 16px;
-  background: #fffefa;
+  background: var(--color-surface-raised);
   padding: 1rem 1.2rem 1.5rem;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgb(50 59 48 / 8%);
+  box-shadow: 0 14px 30px var(--color-shadow-feature);
 }
 
 .feature-art {
@@ -27,20 +27,20 @@
 }
 
 .planner-art {
-  background: #f5eee4;
+  background: var(--color-feature-planner);
 }
 
 .focus-art {
-  background: #edf0e9;
+  background: var(--color-feature-focus);
 }
 
 .progress-art {
-  background: #f2ece7;
+  background: var(--color-feature-progress);
 }
 
 .card-label {
   margin: 0 0 0.45rem;
-  color: #8a8c7d;
+  color: var(--color-feature-muted);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
