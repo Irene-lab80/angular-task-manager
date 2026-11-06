@@ -1,0 +1,139 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  border: 1px solid var(--color-border-medium);
+  border-left: 4px solid #71879a;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  background: #f3f6f8;
+  box-shadow: 0 3px 12px var(--color-shadow-task-card);
+  transition:
+    border-color var(--motion-transition-fast),
+    box-shadow var(--motion-transition-fast),
+    background-color var(--motion-transition-fast);
+}
+
+.task-item:hover {
+  border-top-color: var(--color-border-strong);
+  border-right-color: var(--color-border-strong);
+  border-bottom-color: var(--color-border-strong);
+  box-shadow: 0 6px 18px var(--color-shadow-task-card);
+  transform: translateY(-1px);
+}
+
+.task-item--planned {
+  border-left-color: #71879a;
+}
+
+.task-item--in-progress {
+  border-left-color: #bd8a4c;
+}
+
+.task-item--completed {
+  border-left-color: #6f9272;
+}
+
+.task-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.task-checkbox {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.12rem 0 0;
+  accent-color: var(--color-brand-secondary);
+  cursor: pointer;
+}
+
+.task-checkbox:focus-visible {
+  outline: 2px solid var(--color-focus-indicator);
+  outline-offset: 3px;
+}
+
+.task-copy {
+  display: grid;
+  gap: 0.22rem;
+  min-width: 0;
+}
+
+.task-title {
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.task-description {
+  color: var(--color-text-body);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.task-item--completed .task-title {
+  color: var(--color-text-body);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-decoration-strike);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.38rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.status::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: currentColor;
+  content: '';
+}
+
+.status--planned {
+  border-color: #c7d3dc;
+  background: #e8eef2;
+  color: #455e72;
+}
+
+.status--in-progress {
+  border-color: #e3cfb2;
+  background: #f4eadb;
+  color: #795a32;
+}
+
+.status--completed {
+  border-color: #c5d8c6;
+  background: #e5efe5;
+  color: #456b49;
+}
+
+@media (max-width: 520px) {
+  .task-item {
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 0.85rem;
+  }
+
+  .status {
+    padding: 0.32rem 0.5rem;
+    font-size: 0.66rem;
+  }
+}

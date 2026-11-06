@@ -1,21 +1,48 @@
-import { Component } from '@angular/core';
-import { MOCK_TASKS } from '../../entities/task/model/mock-tasks';
-import type { Task } from '../../entities/task/model/task';
+import { Component, computed, effect, signal } from '@angular/core';
+import { MOCK_TASKS, TaskItem } from '../../entities';
+import { Button } from '../../shared';
+import type { Task } from '../../entities';
 
 @Component({
-  imports: [],
+  imports: [TaskItem, Button],
   selector: 'app-tasks',
   styleUrl: './tasks.scss',
   templateUrl: './tasks.html',
 })
 export class Tasks {
-  protected tasks: Task[] = MOCK_TASKS.map((task) => ({ ...task }));
+  protected readonly tasks = signal(MOCK_TASKS);
+  protected readonly showCompletedOnly = signal(false);
 
-  protected get completedCount(): number {
-    return this.tasks.filter((task) => task.status === 'completed').length;
+  protected readonly completedCount = computed(
+    () => this.tasks().filter((task) => task.status === 'completed').length,
+  );
+
+  protected readonly total = computed(() => this.tasks().length);
+
+  protected readonly visibleTasks = computed(() =>
+    this.showCompletedOnly()
+      ? this.tasks().filter((task) => task.status === 'completed')
+      : this.tasks(),
+  );
+
+  constructor() {
+    effect(() => console.info('Task list updated:', this.tasks()));
   }
 
-  protected toggleTask(task: Task): void {
-    task.status = task.status === 'completed' ? 'planned' : 'completed';
+  protected readonly toggleTask = (task: Task): void => {
+    this.tasks.update((tasks) =>
+      tasks.map((currentTask) =>
+        currentTask.id === task.id
+          ? {
+              ...currentTask,
+              status: currentTask.status === 'completed' ? 'planned' : 'completed',
+            }
+          : currentTask,
+      ),
+    );
+  };
+
+  protected toggleCompletedFilter(): void {
+    this.showCompletedOnly.update((showCompletedOnly) => !showCompletedOnly);
   }
 }

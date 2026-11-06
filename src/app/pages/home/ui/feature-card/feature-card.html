@@ -1,0 +1,14 @@
+<article class="feature-card">
+  <div
+    class="feature-art"
+    [class.planner-art]="artVariant() === 'planner'"
+    [class.focus-art]="artVariant() === 'focus'"
+    [class.progress-art]="artVariant() === 'progress'"
+    aria-hidden="true"
+  >
+    <ng-content select="[feature-art]" />
+  </div>
+  <p class="card-label">{{ label() }}</p>
+  <h3>{{ title() }}</h3>
+  <p>{{ description() }}</p>
+</article>

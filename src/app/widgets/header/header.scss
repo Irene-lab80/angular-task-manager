@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(var(--content-width), calc(100% - 3rem));
+  width: min(var(--layout-content-max-width), calc(100% - 3rem));
   min-height: 76px;
   margin: 0 auto;
 }
@@ -11,8 +11,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: var(--color-brand);
-  font-family: var(--font-display);
+  color: var(--color-brand-primary);
+  font-family: var(--font-family-display);
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -24,9 +24,9 @@
   width: 31px;
   height: 31px;
   border-radius: 10px 10px 10px 3px;
-  background: var(--color-sage);
-  color: var(--color-surface);
-  font-family: var(--font-display);
+  background: var(--color-brand-secondary);
+  color: var(--color-surface-default);
+  font-family: var(--font-family-display);
   font-size: 1.3rem;
   font-style: italic;
   place-items: center;
@@ -38,21 +38,21 @@
 }
 
 .nav a {
-  color: var(--color-body);
+  color: var(--color-text-body);
   font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--motion-transition-fast);
 }
 
 .nav a:hover {
-  color: var(--color-brand);
+  color: var(--color-brand-primary);
 }
 
 .brand:focus-visible,
 .nav a:focus-visible {
   border-radius: 3px;
-  outline: 3px solid var(--color-focus);
+  outline: 3px solid var(--color-focus-indicator);
   outline-offset: 4px;
 }
 
