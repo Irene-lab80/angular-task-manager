@@ -33,16 +33,16 @@
     </label>
 
     <div class="form-actions">
-      <button class="create-button" type="submit" [disabled]="!title.trim()">
+      <app-button type="submit" [disabled]="!title.trim()">
         Добавить задачу
-      </button>
+      </app-button>
       <span class="form-note">Созданные здесь задачи останутся на этой странице.</span>
     </div>
   </form>
 
   <section class="created-tasks">
     <h2>Добавленные задачи</h2>
-    @for (task of createdTasks; track task.id) {
+    @for (task of createdTasks(); track task.id) {
       <article class="created-task">
         <h3>{{ task.title }}</h3>
         @if (task.description) {

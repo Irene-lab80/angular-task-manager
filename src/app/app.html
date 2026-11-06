@@ -2,30 +2,27 @@
 
 <main id="top">
   <nav class="nav">
-    <button
-      class="nav-button"
-      [class.active]="currentPage === 'home'"
+    <app-button
+      [variant]="currentPage === 'home' ? 'navigation-active' : 'navigation'"
       [disabled]="currentPage === 'home'"
       (click)="currentPage = 'home'"
     >
       Главная
-    </button>
-    <button
-      class="nav-button"
-      [class.active]="currentPage === 'tasks'"
+    </app-button>
+    <app-button
+      [variant]="currentPage === 'tasks' ? 'navigation-active' : 'navigation'"
       [disabled]="currentPage === 'tasks'"
       (click)="currentPage = 'tasks'"
     >
       Задачи
-    </button>
-    <button
-      class="nav-button"
-      [class.active]="currentPage === 'create'"
+    </app-button>
+    <app-button
+      [variant]="currentPage === 'create' ? 'navigation-active' : 'navigation'"
       [disabled]="currentPage === 'create'"
       (click)="currentPage = 'create'"
     >
       Создать
-    </button>
+    </app-button>
   </nav>
   @switch (currentPage) {
     @case ('home') {

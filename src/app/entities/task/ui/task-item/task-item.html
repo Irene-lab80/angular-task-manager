@@ -1,0 +1,33 @@
+<article
+  class="task-item"
+  [class.task-item--planned]="task().status === 'planned'"
+  [class.task-item--in-progress]="task().status === 'in-progress'"
+  [class.task-item--completed]="task().status === 'completed'"
+>
+  <label class="task-main">
+    <input
+      class="task-checkbox"
+      type="checkbox"
+      [checked]="task().status === 'completed'"
+      (change)="toggleTask()(task())"
+    />
+    <span class="task-copy">
+      <span class="task-title">{{ task().title }}</span>
+      @if (task().description) {
+        <span class="task-description">{{ task().description }}</span>
+      }
+    </span>
+  </label>
+
+  @switch (task().status) {
+    @case ('planned') {
+      <span class="status status--planned">К выполнению</span>
+    }
+    @case ('in-progress') {
+      <span class="status status--in-progress">В работе</span>
+    }
+    @case ('completed') {
+      <span class="status status--completed">Выполнено</span>
+    }
+  }
+</article>

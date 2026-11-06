@@ -31,7 +31,7 @@
     </div>
   </section>
 
-  <section class="features">
+  <section class="features" id="features">
     <div class="section-heading">
       <p class="eyebrow">A thoughtful toolkit</p>
       <h2>Your day, with a little more clarity.</h2>
@@ -39,9 +39,32 @@
     </div>
 
     <div class="feature-grid">
-      <app-planner-card />
-      <app-focus-card />
-      <app-progress-card />
+      <app-feature-card
+        artVariant="planner"
+        label="01 / PLAN"
+        title="Plan your day"
+        description="See what matters most right now, without letting the rest of your list get lost."
+      >
+        <app-planner-art feature-art />
+      </app-feature-card>
+
+      <app-feature-card
+        artVariant="focus"
+        label="02 / FOCUS"
+        title="Focus on what matters"
+        description="Keep your priorities close and maintain focus on what's important."
+      >
+        <app-focus-art feature-art />
+      </app-feature-card>
+
+      <app-feature-card
+        artVariant="progress"
+        label="03 / PROGRESS"
+        title="Celebrate your progress"
+        description="Notice the little wins along the way and build momentum one completed task at a time."
+      >
+        <app-progress-art feature-art />
+      </app-feature-card>
     </div>
   </section>
 </div>

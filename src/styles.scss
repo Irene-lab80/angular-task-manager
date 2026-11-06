@@ -50,10 +50,43 @@
   --font-display: Georgia, 'Times New Roman', serif;
   --content-width: 1120px;
   --transition-fast: 160ms ease;
+
+  --color-action-primary: var(--color-brand-action);
+  --color-border-default: var(--color-border-card);
+  --color-border-field: var(--color-border-input);
+  --color-border-field-focus: var(--color-input-focus);
+  --color-brand-primary: var(--color-brand);
+  --color-brand-secondary: var(--color-sage);
+  --color-decoration-strike: var(--color-task-strike);
+  --color-feature-background-focus: var(--color-feature-focus);
+  --color-feature-background-planner: var(--color-feature-planner);
+  --color-feature-background-progress: var(--color-feature-progress);
+  --color-feature-text-muted: var(--color-feature-muted);
+  --color-field-background: var(--color-input-background);
+  --color-focus-indicator: var(--color-focus);
+  --color-focus-ring: var(--color-accent-ring);
+  --color-shadow-feature-card: var(--color-shadow-feature);
+  --color-shadow-task-card: var(--color-shadow-task);
+  --color-status-background-completed: var(--color-status-completed-background);
+  --color-status-background-progress: var(--color-status-progress-background);
+  --color-status-text-completed: var(--color-status-completed-text);
+  --color-status-text-planned: var(--color-status-planned-text);
+  --color-status-text-progress: var(--color-status-progress-text);
+  --color-surface-default: var(--color-surface);
+  --color-surface-selected: var(--color-active-background);
+  --color-surface-subtle: var(--color-surface-muted);
+  --color-text-body: var(--color-body);
+  --color-text-body-emphasis: var(--color-text-primary);
+  --color-text-body-secondary: var(--color-body-secondary);
+  --color-text-muted: var(--color-muted);
+  --font-family-display: var(--font-display);
+  --layout-content-max-width: var(--content-width);
+  --motion-transition-fast: var(--transition-fast);
 }
 
 html {
   min-height: 100%;
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
 
@@ -63,7 +96,14 @@ body {
   min-height: 100vh;
   background: var(--color-page-background);
   color: var(--color-text-primary);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,4 +111,8 @@ app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }

@@ -3,10 +3,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  width: min(var(--content-width), calc(100% - 3rem));
+  width: min(var(--layout-content-max-width), calc(100% - 3rem));
   margin: 0 auto;
   padding: 1.35rem 0;
-  color: var(--color-body-secondary);
+  color: var(--color-text-body-secondary);
   font-size: 0.78rem;
 }
 
@@ -15,12 +15,12 @@
 }
 
 .footer-brand {
-  color: var(--color-brand);
+  color: var(--color-brand-primary);
   font-weight: 700;
 }
 
 .footer-note {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 
 @media (max-width: 560px) {

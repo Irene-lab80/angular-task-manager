@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import type { Task } from '../../entities/task/model/task';
+import type { Task } from '../../entities';
+import { Button } from '../../shared';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, Button],
   selector: 'app-create',
   styleUrl: './create.scss',
   templateUrl: './create.html',
@@ -11,8 +12,9 @@ import type { Task } from '../../entities/task/model/task';
 export class Create {
   protected title = '';
   protected description = '';
-  protected createdTasks: Task[] = [];
   private nextTaskId = 1;
+
+  protected readonly createdTasks = signal<Task[]>([]);
 
   protected addTask(): void {
     const title = this.title.trim();
@@ -20,15 +22,15 @@ export class Create {
       return;
     }
 
-    this.createdTasks = [
-      ...this.createdTasks,
+    this.createdTasks.update((tasks) => [
+      ...tasks,
       {
         id: `created-task-${this.nextTaskId++}`,
         title,
         description: this.description.trim(),
         status: 'planned',
       },
-    ];
+    ]);
     this.title = '';
     this.description = '';
   }
